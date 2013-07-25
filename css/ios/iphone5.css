@@ -1,0 +1,28 @@
+html, body{
+    font-size: 1em;
+}
+
+google-map{
+    display: block;
+    height: 300px;
+}
+
+.boton{
+    font-size: 0.8em;
+}
+
+.entrada{
+    font-size: 0.8em;
+}
+
+#categoriasReporte{
+    min-height: 33px;
+}
+
+#contenedorCategoriasReporte{
+    min-height: 33px;
+}
+
+#contenedorPrincipalTipoReporte{
+    background-size: 230px auto;
+}

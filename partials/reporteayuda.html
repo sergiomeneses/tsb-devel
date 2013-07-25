@@ -1,0 +1,79 @@
+<div id="contenedorPrincipalReporteAyuda" class="espaciadox10">
+    <form class="form" ng-controller="ReporteDenunciaCtrl">
+        <div id="contenedorFormularioReporteAyuda" class="centrar contenedorformulario">
+            <h2 class="titulo">Reportar ayuda</h2>
+
+            <div class="contenedorCampo">
+                <p>Espacio para los buenos ciudadanos.</p>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="titulo">Título del reporte:</label>
+                </div>
+                <input id="titulo" class="entrada" type="text" ng-model="reporte.titulo" ng-required="true"/>
+            </div>
+
+            <div id="controlesImagenReporteAyuda" class="alineacionCentral contenedorCampo">
+                <div id="tomarFoto" class="inline-block">
+                    <button class="botonCaptura botonTransparente inline-block" ng-click="tomarFoto()" type="button">
+                        <div id="contenedorImagenBotonTomarFoto" class="centrar">
+                            <img ng-src="img/tomar_foto.png"/>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="cagarFoto" class="inline-block">
+                    <button class="botonCaptura botonTransparente" ng-click="cargarFoto()" type="button">
+                        <div id="contenedorImagenBotonCargarFoto" class="centrar">
+                            <img ng-src="img/cargar_foto.png" />
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="contenedorCampo centrar">
+                <img id="contenedorImagenReporte" ng-src="{{imagenReporte}}"/>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label>Descripción del reporte:</label>
+                </div>
+                <textarea placeholder="Descripción de la ayuda" ng-model="reporte.descripcion" ng-required="true" rows="5"></textarea>
+            </div>
+
+            <div class="contenedorCampo relativa">
+                <div>
+                    <label>Categoría del reporte:</label>
+                </div>
+                <div id="contenedorCategoriasReporte">
+                    <select id="categoriasReporte" ng-model="reporte.categoria" ng-required="true" class="absoluta">
+                        <option value="" ng-selected="true">-- Elije una categoría --</option>
+                        <option value="1">Movilidad</option>
+                        <option value="2">Medio Ambiente</option>
+                        <option value="3">Seguridad</option>
+                        <option value="4">Recreación</option>
+                        <option value="5">Otro</option>
+                    </select>
+                    <div class="expandirCategorias absoluta">
+                        <img ng-src="img/boton_fecha.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedorCampo alineacionCentral">
+                <button class="boton botonVerde" type="button" ng-click="obtenerUbicacion()">Obtener mi ubicación</button>
+            </div>
+
+            <google-map center="center" zoom="zoom" markers="markers" draggable="true" mark-click="true" options='{"streetViewControl": false, "mapTypeControl":false, "zoomControl":false}'></google-map>
+
+            <input type="hidden" ng-model="reporte.tipo" ng-init="reporte.tipo='reporte_yo_ayudo'" />
+
+        </div>
+        <div class="espaciadorx3em"></div>
+        <div class="alineacionCentral">
+            <button class="boton botonRojo botonGrande" ng-click="reportar()" type="submit">Reportar Ayuda</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html ng-app="tsb" xmlns="http://www.w3.org/1999/html" lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/ios/iphone5.css" media="only screen and (min-device-width : 320px) and (max-device-width : 568px)" />
+    <link rel="stylesheet" type="text/css" href="css/ios/ipad.css" media="only screen and (min-device-width : 768px) and (max-device-width : 1024px)" />
+    <title>Todos Somos Bogotá</title>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <!--script src="http://debug.phonegap.com/target/target-script-min.js#tsb"></script-->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    <script type="text/javascript" src="lib/jquery/jquery-2.0.1.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-google-maps.js"></script>
+    <script type="text/javascript" src="lib/angular/localStorageModule.js"></script>
+    <script type="text/javascript" src="js/filtros.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+</head>
+<body>
+<div id="contenedorMensajeCargando" class="invisible">
+    <div class="relativa heightx100">
+        <span id="mensajeCargando" class="espaciadorx3em alineacionCentral">Estamos procesando la solicitud...</span>
+        <div id="contenedorImagenCargando" class="alineacionCentral">
+            <img src="img/cargando.gif" />
+        </div>
+    </div>
+</div>
+<div id="header" ng-controller="HeaderCtrl">
+    <button class="botonTransparente botonImagen inline-block elementosCabecera enlacesCabecera" ng-click="redireccion('{{inicioURL}}')">
+        <div id="contenedorImagenBotonInicio" class="centrar">
+            <img src="img/icono_home.png" />
+        </div>
+    </button>
+    <div id="logo" class="inline-block elementosCabecera">
+        <div id="contenedorImagenBotonLogo" class="centrar">
+            <img ng-src="img/logo.png" />
+        </div>
+    </div>
+    <button class="botonTransparente botonImagen inline-block elementosCabecera enlacesCabecera" ng-click="logout()" ng-show="nombreUsuario">
+        <div id="contenedorImagenBotonCerrarSesion" class="centrar">
+            <img src="img/icono_cerrar.png" ng-click="logout()"/>
+        </div>
+    </button>
+</div>
+<div id="informacionUsuario" class="centrar colorNegro" ng-show="nombreUsuario">
+    <div id="nombreUsuario" class="inline-block">
+        <div id="contenedorImagenHola" class="inline-block">
+            <img src="img/globo.png" />
+        </div>
+        <div class="inline-block">{{nombreUsuario}}</div>
+    </div>
+    <div id="cuentaUsuario" class="inline-block">
+        <a class="enlaceCuenta" ng-click="editarCuenta()">Editar Cuenta</a>
+    </div>
+</div>
+<div id="contenedorPrincipal" class="centrar">
+    <div ng-view></div>
+</div>
+</body>
+</html>

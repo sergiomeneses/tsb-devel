@@ -1,0 +1,55 @@
+<div  id="contenedorPrincipalReporteInforme" class="espaciadox10">
+    <form class="form" ng-controller="ReporteInformeCtrl">
+        <div id="contenedorFormularioReporteInforme" class="centrar contenedorformulario">
+            <h2 class="titulo">Reportar informe</h2>
+
+            <div class="contenedorCampo">
+                <p>Situaciones que necesitan descripción.</p>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="titulo">Título del reporte:</label>
+                </div>
+                <input id="titulo" class="entrada" type="text" ng-model="reporte.titulo" ng-required="true"/>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label>Descripción del reporte:</label>
+                </div>
+                <textarea placeholder="Descripcion del informe" rows="10" ng-model="reporte.descripcion"></textarea>
+            </div>
+
+            <div class="contenedorCampo relativa">
+                <div>
+                    <label>Categoría del reporte:</label>
+                </div>
+                <div id="contenedorCategoriasReporte">
+                    <select id="categoriasReporte" ng-model="reporte.categoria" ng-required="true" class="absoluta">
+                        <option value="" ng-selected="true">-- Elije una categoría --</option>
+                        <option value="1">Movilidad</option>
+                        <option value="2">Medio Ambiente</option>
+                        <option value="3">Seguridad</option>
+                        <option value="4">Recreación</option>
+                        <option value="5">Otro</option>
+                    </select>
+                    <div class="expandirCategorias absoluta">
+                        <img ng-src="img/boton_fecha.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedorCampo alineacionCentral">
+                <button class="boton botonVerde" type="button" ng-click="obtenerUbicacion()">Obtener mi ubicación</button>
+            </div>
+
+            <google-map center="center" zoom="zoom" markers="markers" draggable="true" mark-click="true" options='{"streetViewControl": false, "mapTypeControl":false, "zoomControl":false}'></google-map>
+        </div>
+
+        <div class="espaciadorx3em"></div>
+        <div class="alineacionCentral">
+            <button class="boton botonRojo botonGrande" ng-click="reportar()" type="submit">Reportar Informe</button>
+        </div>
+    </form>
+</div>
