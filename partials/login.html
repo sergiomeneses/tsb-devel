@@ -1,0 +1,28 @@
+<div id="contenedorPrincipalLogin" class="heightx100 espaciadox10">
+    <form class="form" ng-controller="LoginCtrl" ng-submit="loginUsuario()">
+        <div id="contenedorFormularioLogin" class="centrar contenedorformulario">
+            <h2 class="titulo">iniciar sesión</h2>
+            <div class="contenedorCampo">
+                <div>
+                    <label for="usuario">Nombre de usuario:</label>
+                </div>
+                <input class="entrada" id="usuario" type="text" ng-model="usuario.username" ng-required="true" />
+            </div>
+            <div class="contenedorCampo">
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                </div>
+                <input class="entrada" id="contrasena" type="password" ng-model="usuario.password" ng-required="true" />
+            </div>
+
+            <div class="contenedorCampo">
+                <a ng-click="redireccionExterna('{{olvidoContrasenaURL}}')">¿Olvidaste tu contraseña?</a>
+            </div>
+
+        </div>
+        <div class="espaciadorx3em"></div>
+        <div class="alineacionCentral">
+            <button id="botonIniciarSesion" class="boton botonVerde botonGrande" type="submit">iniciar sesión</button>
+        </div>
+    </form>
+</div>

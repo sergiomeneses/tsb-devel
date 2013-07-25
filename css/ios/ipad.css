@@ -1,0 +1,27 @@
+html, body{
+    font-size: 1.3em;
+}
+
+textarea{
+    font-size: 1.5em;
+}
+
+.boton{
+    font-size: 1em;
+}
+
+.entrada{
+    font-size: 1em;
+}
+
+#categoriasReporte{
+    height: 80px;
+}
+
+#contenedorCategoriasReporte{
+    min-height: 80px;
+}
+
+#contenedorPrincipalTipoReporte{
+    background-size: 738px auto;
+}

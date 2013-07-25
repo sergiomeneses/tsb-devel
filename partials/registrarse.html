@@ -1,0 +1,63 @@
+<div id="contenedorPrincipalRegistro" class="heightx100 espaciadox10">
+    <form class="form" ng-controller="RegistroCtrl" ng-submit="crearUsuario()">
+        <div id="contenedorFormularioRegistro" class="centrar contenedorformulario">
+            <h2 class="titulo">Crear una cuenta</h2>
+            <div class="contenedorCampo">
+                <div>
+                    <label for="nombreCompleto">Nombre completo</label>
+                </div>
+                <input class="entrada" id="nombreCompleto" type="text" ng-model="usuario.nombre" ng-required="true"/>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="nacimiento">Fecha de nacimiento</label>
+                </div>
+                <input class="entrada" id="nacimiento" type="text" ng-model="usuario.fechaNacimiento" placeholder="AAAA-MM-DD" ng-required="true"/>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>Genero</div>
+                <div class="alineacionCentral">
+                <div class="inline-block contenedorGenero">
+                    <input id="generoMasculino" class="oculto" ng-model="usuario.genero" value="6" type="radio" name="genero" ng-required="true"/>
+                    <label for="generoMasculino"><img ng-src="{{ generoMasculino }}" ng-click="generoMasculinoActivo()"></label>
+                </div>
+                <div class="inline-block contenedorGenero">
+                    <input id="generoFemenino" class="oculto" ng-model="usuario.genero" value="7" type="radio" name="genero" ng-required="true"/>
+                    <label for="generoFemenino"><img ng-src="{{ generoFemenino }}" ng-click="generoFemeninoActivo()"></label>
+                </div>
+                </div>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="nombreUsuarioApp">Nombre de usuario</label>
+                </div>
+                <input class="entrada" id="nombreUsuarioApp" type="text" ng-model="usuario.username" ng-required="true" />
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="correoElectronico">Correo electrónico</label>
+                </div>
+                <input class="entrada" id="correoElectronico" type="email" ng-model="usuario.email" ng-required="true"/>
+            </div>
+
+            <div class="contenedorCampo">
+                <div>
+                    <label for="contrasena">Contraseña</label>
+                </div>
+                <input class="entrada" id="contrasena" type="password" ng-model="usuario.password" ng-required="true"/>
+            </div>
+            <div class="contenedorCampo">
+                <p>Al registrase usted acepta los <a ng-click="redireccionExterna('{{ terminosCondicionesURL }}')">términos y condiciones.</a></p>
+            </div>
+        </div>
+
+        <div class="espaciadorx3em"></div>
+        <div class="alineacionCentral">
+            <button id="botonRegistrarse" class="boton botonVerde botonGrande" type="submit">crear usuario</button>
+        </div>
+    </form>
+</div>

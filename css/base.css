@@ -1,0 +1,442 @@
+@import url('reset.css');
+@import url('fonts.css');
+
+
+html, body {
+    background: #f4f4f4 url('../img/fondo.png') repeat center;
+    font-family: 'Roboto Condensed';
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+textarea{
+    width: 100%;
+}
+
+select{
+    width: 100%;
+}
+
+google-map{
+    display: block;
+    height: 500px;
+}
+
+video{
+    width: auto;
+    height: 100%;
+}
+
+div, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    padding: 0;
+}
+
+button{
+    font-family: 'Roboto Condensed';
+}
+
+.oculto{
+    display: none;
+}
+
+.centrar {
+    margin: 0 auto;
+}
+
+.alineacionCentral{
+    text-align: center;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.elementosCabecera{
+    width: 32%;
+    text-align: center;
+}
+
+.enlacesCabecera{
+    vertical-align: middle;
+}
+
+.visible{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+.boton{
+    border-radius: 15px 15px 15px 15px;
+    color: #ffffff;
+    height: 2em;
+    width: 80%;
+    border: none;
+    font-size: 1em;
+    margin: 1% 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.botonImagen{
+    border-radius: 15px 15px 15px 15px;
+    color: #ffffff;
+    border: none;
+}
+
+.botonCaptura{
+    border-radius: 15px 15px 15px 15px;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+}
+
+.enlaceCuenta{
+    color: #CE190F;
+    border: none;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+.heightx100{
+    height: 100%;
+}
+
+.botonVerde{
+    background: #9ac201; /* Old browsers */
+    background: -moz-linear-gradient(top, #9ac201 0%, #6b9100 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9ac201), color-stop(100%,#6b9100)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #9ac201 0%,#6b9100 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #9ac201 0%,#6b9100 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #9ac201 0%,#6b9100 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #9ac201 0%,#6b9100 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ac201', endColorstr='#6b9100',GradientType=0 ); /* IE6-9 */
+}
+
+.botonNegro{
+    background: #555555; /* Old browsers */
+    background: -moz-linear-gradient(top, #555555 0%, #262626 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555555), color-stop(100%,#262626)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #555555 0%,#262626 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #555555 0%,#262626 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #555555 0%,#262626 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #555555 0%,#262626 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
+}
+
+.botonRojo{
+    background: #d60008; /* Old browsers */
+    background: -moz-linear-gradient(top, #d60008 0%, #800000 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d60008), color-stop(100%,#800000)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #d60008 0%,#800000 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #d60008 0%,#800000 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #d60008 0%,#800000 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #d60008 0%,#800000 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60008', endColorstr='#800000',GradientType=0 ); /* IE6-9 */
+}
+
+.botonTransparente{
+    background: transparent;
+}
+
+.espaciadorx3em{
+    height: 3em;
+}
+
+.entrada{
+    border-radius: 15px 15px 15px 15px;
+    width: 100%;
+    font-size: 1.5em;
+    border: none;
+}
+
+.contenedorCampo{
+    margin: 5% 0;
+    width: 100%;
+}
+
+.contenedorCampoEspecial{
+    margin: 5% 0 0;
+    width: 100%;
+}
+
+.contenedorCampo a{
+
+}
+
+.contenedorGenero{
+    width: 40%;
+}
+
+.espaciadox10{
+    padding: 5% 0;
+}
+
+.titulo{
+    color: #FDE000;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contenedorformulario{
+    background-color: rgba(0, 0, 0, 0.7);
+    width:  75%;
+    padding: 4% 7%;
+}
+
+.botonGrande{
+    width: 60%;
+    height: 3em;
+}
+.botonTipoReporte{
+    width: 80%;
+    height: 3em;
+}
+
+.bloque{
+    display: block;
+}
+
+.colorBlanco{
+      color: #ffffff;
+}
+
+.sinDecoracion{
+    text-decoration: none;
+}
+
+.colorNegro{
+    color: #000000;
+}
+
+.expandirCategorias{
+    pointer-events: none;
+    display: inline;
+    width: 100%;
+    text-align: center;
+}
+
+.relativa{
+    position: relative;
+}
+
+.absoluta{
+    position: absolute;
+}
+
+.espacioGraficaTipoReporte{
+    padding: 20% 0;
+}
+
+#contenedorMensajeCargando{
+    background: #000000;
+    height: 100%;
+    opacity: 0.7;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 5000;
+    overflow: hidden;
+}
+
+#mensajeCargando{
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#contenedorImagenCargando{
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 30%;
+}
+
+#header {
+    background: #ffffff;
+    box-shadow: 0 2px 32px -9px #000000;
+    padding: 4% 0;
+}
+#contenedorImagenBotonInicio{
+    width: 34%;
+}
+
+#contenedorImagenBotonLogo{
+
+}
+
+#logo{
+
+}
+
+#contenedorImagenBotonCerrarSesion{
+    width: 34%;
+}
+
+#informacionUsuario{
+    width: 80%;
+    padding: 2% 0;
+}
+
+#nombreUsuario{
+     width: 45%;
+}
+
+#contenedorImagenHola{
+    width: 40%;
+}
+
+#cuentaUsuario{
+    text-align: right;
+     width: 45%;
+}
+
+#contenedorPrincipal{
+    height: 80%;
+    width: 90%;
+}
+
+#contenedorImagenFondoInicio{
+         width: 100%;
+}
+
+#paginaInicio{
+
+}
+
+#imagenInicio{
+
+}
+
+#contenedorPrincipalLogin{
+
+}
+
+#contenedorFormularioLogin{
+
+}
+
+#botonIniciarSesion{
+
+}
+
+#contenedorPrincipalRegistro{
+
+}
+
+#contenedorFormularioRegistro{
+
+}
+
+#botonRegistrarse{
+
+}
+
+#generoMasculino{
+
+}
+
+#generoMasculino + label{
+
+}
+
+#generoFemenino{
+
+}
+
+#contenedorPrincipalTipoReporte{
+    background: url('../img/graficaTipoReporte.png') no-repeat;
+    background-size: 100% auto;
+}
+
+
+#botonVerGalerias{
+    padding: 25% 0;
+}
+
+#contenedorPrincipalReporteDenuncia{
+
+}
+
+#contenedorFormularioReporteDenuncia{
+
+}
+
+#cagarFoto{
+    width: 40%;
+}
+
+#contenedorImagenBotonCargarFoto{
+
+}
+
+#tomarFoto{
+    width: 40%;
+}
+
+#contenedorImagenBotonTomarFoto{
+
+}
+
+#controlesImagenReporteDenuncia{
+
+}
+
+#controlesImagenReporteAyuda{
+
+}
+
+#categoriasReporte{
+    opacity: 0;
+    min-height: 138px;
+}
+
+#contenedorCategoriasReporte{
+    min-height: 138px;
+}
+
+#contenedorImagenReporte{
+    width: 100%;
+    display: block;
+}
+
+#contenedorPrincipalReporteAyuda{
+
+}
+
+#contenedorFormularioReporteAyuda{
+
+}
+
+#controlesImagenReporteAyuda{
+
+}
+
+#contenedorPrincipalReporteInforme{
+
+}
+
+#contenedorFormularioReporteInforme{
+
+}
