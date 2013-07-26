@@ -95,11 +95,11 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
-                    var binario = atob(imagenData);
-                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
-                    $scope.orientacion = exif.Orientation;
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
+                    var binario = atob(imagenData);
+                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
+                    alert(exif.Orientation);
                 });
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al tomar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
@@ -120,6 +120,9 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
+                    var binario = atob(imagenData);
+                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
+                    alert(exif.Orientation);
                 });
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al cagar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
