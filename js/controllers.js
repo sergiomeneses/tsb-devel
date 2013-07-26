@@ -100,7 +100,7 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 });
                 setInterval(function(){
                     alert($('img#contenedorImagenReporte').exif('Orientation'));
-                },800)
+                },2000)
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al tomar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
             }, {
