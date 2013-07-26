@@ -95,7 +95,9 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
-                    alert('camara');
+                    var binario = atob(imagenData);
+                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
+                    $scope.orientacion = exif.Orientation ;
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
                 });
@@ -116,7 +118,6 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
-                    alert('galeria');
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
                 });
