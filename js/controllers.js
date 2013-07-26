@@ -89,13 +89,16 @@ function TipoReporteCtrl($scope){
 }
 
 //Reporte Denuncia
-function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location, $http){
+function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location, $http, $window){
 
     $scope.tomarFoto = function(){
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
+                    var binario = atob(imagenData);
+                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
+                    $window.alert('Orientacion: ' + exif.Orientation);
                     $scope.imagenReporteAPI = imagenData;
                 });
             }, function (mensaje) {
