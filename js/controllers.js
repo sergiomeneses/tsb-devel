@@ -97,13 +97,13 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
+                    alert('sadasjkdlajsldkj');
+                    $('#contenedorImagenReporte').change(function(){
+                        $(this).fileExif(function(exifObject){
+                            alert(exifObject.Orientation);
+                        })
+                    });
                 });
-                var binario = new FileReader();
-                binario.readAsBinaryString(imagenData);
-                binario.onload = function(){
-                    var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
-                    $window.alert(exif.Orientation);
-                };
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al tomar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
             }, {
@@ -123,12 +123,6 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
-                    var binario = new FileReader();
-                    binario.readAsBinaryString(imagenData);
-                    binario.onload = function(){
-                        var exif = EXIF.readFromBinaryFile(new BinaryFile(this.result));
-                        alert(exif.Orientation);
-                    }
                 });
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al cagar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
