@@ -44,7 +44,7 @@ function HomeCtrl($scope, localStorageService, $location, $rootScope) {
         $location.path('/tiporeporte')
     }
 
-    $scope.info = "img/home/inicio@2x.png";
+    //$scope.info = "img/home/inicio@2x.png";
 }
 
 //Login
