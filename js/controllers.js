@@ -97,7 +97,7 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     var binario = atob(imagenData);
                     var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
-                    $scope.orientacion = exif.Orientation ;
+                    $scope.orientacion = exif.Orientation;
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
                 });
