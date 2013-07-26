@@ -97,9 +97,10 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
-                    alert($('img#contenedorImagenReporte').exif('Orientation'));
                 });
-                alert($('img#contenedorImagenReporte').exif('Orientation'));
+                setInterval(function(){
+                    alert($('img#contenedorImagenReporte').exif('Orientation'));
+                },800)
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al tomar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
             }, {
