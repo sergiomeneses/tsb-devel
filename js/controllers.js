@@ -98,10 +98,8 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
                     alert('sadasjkdlajsldkj');
-                    $('#contenedorImagenReporte').change(function(){
-                        $(this).fileExif(function(exifObject){
-                            alert(exifObject.Orientation);
-                        })
+                    $('#contenedorImagenReporte').fileExif(function(exifObject){
+                        alert(exifObject.Orientation);
                     });
                 });
             }, function (mensaje) {
