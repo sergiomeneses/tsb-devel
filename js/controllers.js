@@ -95,10 +95,8 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
+                    alert('camara');
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
-                    var binario = atob(imagenData);
-                    var exif = EXIF.readFromBinaryFile(new BinaryFile(binario));
-                    alert('Orientacion: ' + exif.Orientation);
                     $scope.imagenReporteAPI = imagenData;
                 });
             }, function (mensaje) {
@@ -118,6 +116,7 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
         navigator.camera.getPicture(
             function (imagenData) {
                 $scope.$apply(function($scope){
+                    alert('galeria');
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
                 });
