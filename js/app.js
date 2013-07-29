@@ -42,8 +42,6 @@ angulargap.run(function($rootScope, $location, $window) {
         $window.open(ruta, '_system', 'location=yes');
     }
     $rootScope.exifLogo = function(){
-        var orientacionLogo = $('#contenedorImagenBotonLogo img').exif('Orientation');
-
-        return orientacionLogo();
+        alert($('#contenedorImagenBotonLogo img').exif('Orientation'));
     };
 });
