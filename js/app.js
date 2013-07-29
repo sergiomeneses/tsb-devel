@@ -41,7 +41,4 @@ angulargap.run(function($rootScope, $location, $window) {
         var ruta = 'http://todossomosbogota.com/user/' + $rootScope.idUsuario + '/edit';
         $window.open(ruta, '_system', 'location=yes');
     }
-    $rootScope.exifLogo = function(){
-        alert($('#contenedorImagenBotonLogo img').exif('Orientation'));
-    };
 });

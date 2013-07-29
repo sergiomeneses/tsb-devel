@@ -89,7 +89,7 @@ function TipoReporteCtrl($scope){
 }
 
 //Reporte Denuncia
-function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location, $http){
+function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location, $http, $log){
 
     $scope.tomarFoto = function(){
         navigator.camera.getPicture(
@@ -97,7 +97,7 @@ function ReporteDenunciaCtrl($scope, $rootScope, localStorageService, $location,
                 $scope.$apply(function($scope){
                     $scope.imagenReporte = "data:image/jpeg;base64," + imagenData;
                     $scope.imagenReporteAPI = imagenData;
-                    $rootScope.exifLogo();
+                    $log.log($('#contenedorImagenReporte').exifAll());
                 });
             }, function (mensaje) {
                 navigator.notification.alert('Hubo un error al tomar la foto' + mensaje, function(){}, 'Error Imagen', 'Intentar de nuevo');
